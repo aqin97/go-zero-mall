@@ -10,3 +10,5 @@ Mysql:
 CacheRedis:
 - Host: 47.100.21.38:6379
   Type: node
+
+Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
