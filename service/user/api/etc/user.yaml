@@ -1,3 +1,21 @@
 Name: User
 Host: 0.0.0.0
-Port: 8888
+Port: 8000
+
+Mysql:
+  DataSource: root:19970530zfq.@tcp(mysql:3306)/go_zero_mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+- Host: 47.100.21.38:6379
+  Pass: 19970530@zfq
+  Type: node
+
+Auth:
+  AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
+  AccessExpire: 86400
+
+UserRpc:
+  Etcd:
+    Hosts:
+    - 47.100.21.38:2379
+    Key: user.rpc
