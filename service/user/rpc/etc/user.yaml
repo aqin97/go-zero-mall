@@ -2,13 +2,14 @@ Name: user.rpc
 ListenOn: 0.0.0.0:9000
 Etcd:
   Hosts:
-  - 47.100.21.38:2379
+  - localhost:2379
   Key: user.rpc
 Mysql:
   DataSource: root:19970530zfq.@tcp(mysql:3306)/go_zero_mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
 
 CacheRedis:
 - Host: 47.100.21.38:6379
+  Pass: 19970530@zfq
   Type: node
 
 Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe

@@ -17,5 +17,5 @@ Auth:
 UserRpc:
   Etcd:
     Hosts:
-    - 47.100.21.38:2379
+    - localhost:2379
     Key: user.rpc
