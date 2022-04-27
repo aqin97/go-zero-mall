@@ -5,6 +5,7 @@ import (
 
 	"go-zero-mall/service/product/api/internal/svc"
 	"go-zero-mall/service/product/api/internal/types"
+	"go-zero-mall/service/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -25,6 +26,11 @@ func NewRemoveLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RemoveLogi
 
 func (l *RemoveLogic) Remove(req *types.RemoveRequest) (resp *types.RemoveResponse, err error) {
 	// todo: add your logic here and delete this line
-
-	return
+	_, err = l.svcCtx.ProductRpc.Remove(l.ctx, &product.RemoveRequest{
+		Id: req.Id,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.RemoveResponse{}, nil
 }

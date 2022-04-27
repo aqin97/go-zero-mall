@@ -5,6 +5,7 @@ import (
 
 	"go-zero-mall/service/product/api/internal/svc"
 	"go-zero-mall/service/product/api/internal/types"
+	"go-zero-mall/service/product/rpc/product"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -25,6 +26,16 @@ func NewUpdateLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UpdateLogi
 
 func (l *UpdateLogic) Update(req *types.UpdateRequest) (resp *types.UpdateResponse, err error) {
 	// todo: add your logic here and delete this line
-
-	return
+	_, err = l.svcCtx.ProductRpc.Update(l.ctx, &product.UpdateRequest{
+		Id:     req.Id,
+		Name:   req.Name,
+		Desc:   req.Desc,
+		Stock:  req.Stock,
+		Amount: req.Amount,
+		Status: req.Status,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.UpdateResponse{}, nil
 }
