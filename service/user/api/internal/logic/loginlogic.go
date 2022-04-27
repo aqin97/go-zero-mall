@@ -47,6 +47,6 @@ func (l *LoginLogic) Login(req *types.LoginRequest) (resp *types.LoginResponse, 
 
 	return &types.LoginResponse{
 		AccessToken:  accessToken,
-		AccessExpire: accessExpire,
+		AccessExpire: now + accessExpire,
 	}, nil
 }
