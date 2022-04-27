@@ -8,8 +8,7 @@ import (
 )
 
 type ServiceContext struct {
-	Config config.Config
-
+	Config  config.Config
 	UserRpc user.User
 }
 
