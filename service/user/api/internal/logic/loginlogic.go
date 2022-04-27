@@ -23,6 +23,9 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 	}
 }
 
+/*
+通过调用user-rpc服务进行登录验证，成功登录后，使用用户信息生成对应的token以及有效期
+*/
 func (l *LoginLogic) Login(req *types.LoginRequest) (resp *types.LoginResponse, err error) {
 	// todo: add your logic here and delete this line
 
