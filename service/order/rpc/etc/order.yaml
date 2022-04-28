@@ -1,6 +1,26 @@
 Name: order.rpc
-ListenOn: 127.0.0.1:8080
+ListenOn: 127.0.0.1:9002
 Etcd:
   Hosts:
   - 127.0.0.1:2379
   Key: order.rpc
+
+Mysql:
+  DataSource: root:19970530zfq.@tcp(47.100.21.38:3306)/go_zero_mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+- Host: 47.100.21.38:6379
+  Pass: 19970530@zfq
+  Type: node
+
+UserRpc:
+  Etcd:
+    Hosts:
+    - 127.0.0.1:2379
+    Key: user.rpc
+
+ProductRpc:
+  Etcd:
+    Hosts:
+    - 127.0.0.1:2379
+    Key: product.rpc
