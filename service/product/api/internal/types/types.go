@@ -15,11 +15,11 @@ type CreateResponse struct {
 
 type UpdateRequest struct {
 	Id     int64  `json:"id"`
-	Name   string `json:"name.optional"`
-	Desc   string `json:"desc,optional"`
+	Name   string `json:"name,omitempty"`
+	Desc   string `json:"desc,omitempty"`
 	Stock  int64  `json:"stock"`
-	Amount int64  `json:"amount,optional"`
-	Status int64  `json:"status,optional"`
+	Amount int64  `json:"amount,omitempty"`
+	Status int64  `json:"status,omitempty"`
 }
 
 type UpdateResponse struct {
