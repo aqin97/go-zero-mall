@@ -29,6 +29,7 @@ type (
 	orderModel interface {
 		Insert(ctx context.Context, data *Order) (sql.Result, error)
 		FindOne(ctx context.Context, id int64) (*Order, error)
+		FindAllByUid(ctx context.Context, uid int64) ([]*Order, error)
 		Update(ctx context.Context, data *Order) error
 		Delete(ctx context.Context, id int64) error
 	}
@@ -81,6 +82,21 @@ func (m *defaultOrderModel) FindOne(ctx context.Context, id int64) (*Order, erro
 		return nil, err
 	}
 }
+
+func (m *defaultOrderModel) FindAllByUid(ctx context.Context, uid int64) ([]*Order, error) {
+	var resp []*Order
+	query := fmt.Sprintf("select %s from %s where `uid` = ?", orderRows, m.table)
+	err := m.QueryRowsNoCacheCtx(ctx, &resp, query, uid)
+	switch err {
+	case nil:
+		return resp, nil
+	case sqlc.ErrNotFound:
+		return nil, ErrNotFound
+	default:
+		return nil, err
+	}
+}
+
 
 func (m *defaultOrderModel) Update(ctx context.Context, data *Order) error {
 	orderIdKey := fmt.Sprintf("%s%v", cacheOrderIdPrefix, data.Id)

@@ -523,7 +523,7 @@ type ListResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Data []*DetailRequest `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
+	Data []*DetailResponse `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
 }
 
 func (x *ListResponse) Reset() {
@@ -558,7 +558,7 @@ func (*ListResponse) Descriptor() ([]byte, []int) {
 	return file_order_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *ListResponse) GetData() []*DetailRequest {
+func (x *ListResponse) GetData() []*DetailResponse {
 	if x != nil {
 		return x.Data
 	}

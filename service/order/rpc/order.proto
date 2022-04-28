@@ -50,7 +50,7 @@ message ListRequest {
     int64 uid = 1;
 }
 message ListResponse {
-    repeated DetailRequest data = 1;
+    repeated DetailResponse data = 1;
 }
 
 //订单支付
