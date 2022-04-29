@@ -25,6 +25,6 @@ func NewUpdateLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UpdateLogi
 
 func (l *UpdateLogic) Update(req *types.UpdateRequest) (resp *types.UpdateResponse, err error) {
 	// todo: add your logic here and delete this line
-
+	res, err := l.svcCtx.OrderRpc.Update(l.ctx)
 	return
 }
