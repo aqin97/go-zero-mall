@@ -17,7 +17,7 @@ type UpdateRequest struct {
 	Uid    int64 `json:"uid,optional"`
 	Pid    int64 `json:"pid,optional"`
 	Amount int64 `json:"amount,optional"`
-	Status int64 `json:"status, optional"`
+	Status int64 `json:"status,optional"`
 }
 
 type UpdateResponse struct {
@@ -39,7 +39,7 @@ type DetailResponse struct {
 	Uid    int64 `json:"uid"`
 	Pid    int64 `json:"pid"`
 	Amount int64 `json:"amount"`
-	Status int64 `json:"amount"`
+	Status int64 `json:"status"`
 }
 
 type ListRequest struct {
@@ -51,5 +51,5 @@ type ListResponse struct {
 	Uid    int64 `json:"uid"`
 	Pid    int64 `json:"pid"`
 	Amount int64 `json:"amount"`
-	Status int64 `json:"amount"`
+	Status int64 `json:"status"`
 }
